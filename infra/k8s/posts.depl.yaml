@@ -1,0 +1,17 @@
+apiVersion: apps/v1 # הגרסה של ה-API של האובייקט
+kind: Deployment # סוג האובייקט שאנחנו רוצים ליצור
+metadata:
+  name: posts-depl # שם האובייקט
+spec:
+  replicas: 1  # מספר העותקים של הפוד שיהיו פעילים בו זמנית
+  selector:
+    matchLabels:
+      app: posts # הגדרה אילו פודים ישוייכו לדיפלוימנט הזה לפי התוויות שלהם
+  template:
+    metadata:
+      labels:
+        app: posts # התוויות שיתווית לפודים החדשים שייווצרו מהתבנית הזו
+    spec:
+      containers: # הגדרת הקונטיינרים שיהיו בכל פוד
+        - name: posts # שם הקונטיינר
+          image: evy/posts:0.0.1 # האימג' שהקונטיינר ישתמש בו
