@@ -14,4 +14,4 @@ spec:
     spec:
       containers: # הגדרת הקונטיינרים שיהיו בכל פוד
         - name: posts # שם הקונטיינר
-          image: evy/posts:0.0.1 # האימג' שהקונטיינר ישתמש בו
+          image: evy/posts # האימג' שהקונטיינר ישתמש בו
